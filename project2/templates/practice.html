@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block head %}{{practice_name}}{% endblock %}
+
+{% block title %}{{practice_name}}{% endblock %}
+
+{% block content %}
+
+{% include practice_page %}
+<hr>
+<p><a href="http://127.0.0.1:8000/accounts/profile/">Вернуться в профайл</a></p>
+{% endblock %}

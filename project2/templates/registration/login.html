@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block head %}Авторизация{% endblock %}
+
+{% block title %}Авторизация{% endblock %}
+
+{% block content %}
+
+  {% if form.errors %}
+    <p class="error" style="color: red;">Данное сочетание логина и пароля не зарегистрировано в системе.</p>
+  {% endif %}
+  <p>Введите Ваш логин и пароль для продолжения.</p>
+  <form action="" method="post">
+    <label for="username">Логин:</label>
+    <input type="text" name="username" value="" id="username"> <br> <br>
+    <label for="password">Пароль:</label>
+    <input type="password" name="password" value="" id="password"> <br>
+
+    <input type="submit" value="Войти" />
+    <input type="hidden" name="next" value="{{ next|escape }}" />
+  </form>
+
+{% endblock %}

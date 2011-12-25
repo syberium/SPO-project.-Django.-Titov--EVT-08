@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block head %}{{test_name}}{% endblock %}
+
+{% block title %}{{test_name}}{% endblock %}
+
+{% block content %}
+<p> Ответьте на ряд следующих вопросов. Ответ вводите в единственном числе именительного падежа с маленькой буквы.</p>
+{% ifequal test_id "test_SPO" %}<form action="http://127.0.0.1:8000/spo/test-complete/" method="post">
+{% else %}<form action="http://127.0.0.1:8000/ovk/test-complete/" method="post">
+{% endifequal %}
+{{questions|safe}}
+</form>
+{% endblock %}

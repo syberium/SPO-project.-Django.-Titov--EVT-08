@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block head %}{{lecture_name}}{% endblock %}
+
+{% block title %}{{lecture_name}}{% endblock %}
+
+{% block content %}
+
+{% include lecture_page %}
+<hr>
+<p><a href="http://127.0.0.1:8000/accounts/profile/">Вернуться в профайл</a></p>
+{% endblock %}

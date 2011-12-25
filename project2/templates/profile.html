@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block head %}Личная страница{% endblock %}
+
+{% block title %}Добро пожаловать на личную страницу{% endblock %}
+
+{% block content %}
+
+<p>Здравствуйте, {{ name }}. Последний раз вы здесь были {{ last_time }}.</p>
+
+{% if status %}
+{% else %}
+<p>Текущее состояние:</p>
+<p>Ваша группа {{ group }}.</p>
+<p>Текущие предметы:</p>
+{{ subjects|safe }}
+
+<a href="http://127.0.0.1:8000/accounts/logout">Покинуть систему</a>
+<hr>
+<p>Ссылки на необходимые источники:</p>
+<b><u>ОВК:</u></b><br>
+<a href="http://127.0.0.1:8000/ovk/lecture1">Лекция 1</a><br>
+<a href="http://127.0.0.1:8000/ovk/lecture2">Лекция 2</a><br>
+<br>
+<a href="http://127.0.0.1:8000/ovk/practice1">Практика 1</a><br>
+<br>
+<a href="http://127.0.0.1:8000/ovk/test">Тест</a>
+<br>
+
+<b><u>СПО:</u></b><br>
+<a href="http://127.0.0.1:8000/spo/lecture1">Лекция 1</a><br>
+<a href="http://127.0.0.1:8000/spo/lecture2">Лекция 2</a><br>
+<br>
+<a href="http://127.0.0.1:8000/spo/practice1">Практика 1</a><br>
+<br>
+<a href="http://127.0.0.1:8000/spo/test">Тест</a>
+<br>
+
+{% endif %}
+
+
+{% endblock %}
